@@ -115,12 +115,26 @@ func (p *OIDCProvider) createSessionState(token *oauth2.Token, ctx context.Conte
 		return nil, fmt.Errorf("email in id_token (%s) isn't verified", claims.Email)
 	}
 
+	user := ""
+	if p.UsernameClaim != "" {
+		claimsMap := make(map[string]interface{})
+		if err := idToken.Claims(&claimsMap); err != nil {
+			return nil, fmt.Errorf("failed to parse id_token claims: %v", err)
+		}
+		if u, ok := claimsMap[p.UsernameClaim]; ok {
+			if user, ok = u.(string); !ok {
+				return nil, fmt.Errorf("id_token claim %s's value is not a string", p.UsernameClaim)
+			}
+		}
+	}
+
 	return &SessionState{
 		AccessToken:  token.AccessToken,
 		IdToken:      rawIDToken,
 		RefreshToken: token.RefreshToken,
 		ExpiresOn:    token.Expiry,
 		Email:        claims.Email,
+		User:         user,
 	}, nil
 }
 
