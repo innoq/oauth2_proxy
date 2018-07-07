@@ -1,3 +1,12 @@
+# About this Branch
+
+This is a fork of https://github.com/bitly/oauth2_proxy with the
+following pull requests applied:
+
+* https://github.com/bitly/oauth2_proxy/pull/424
+* https://github.com/bitly/oauth2_proxy/pull/464
+* https://github.com/bitly/oauth2_proxy/pull/621
+
 oauth2_proxy
 =================
 
