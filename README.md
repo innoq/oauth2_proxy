@@ -6,6 +6,7 @@ following pull requests applied:
 * https://github.com/bitly/oauth2_proxy/pull/424
 * https://github.com/bitly/oauth2_proxy/pull/464
 * https://github.com/bitly/oauth2_proxy/pull/621
+* https://github.com/bitly/oauth2_proxy/pull/626
 
 oauth2_proxy
 =================
