@@ -8,6 +8,10 @@ following pull requests applied:
 * https://github.com/bitly/oauth2_proxy/pull/621
 * https://github.com/bitly/oauth2_proxy/pull/626
 
+the actual patch for applied bitly/oauth2_proxy/pull/626 had to be
+amended a bit after because of the changes introduced by
+bitly/oauth2_proxy/pull/621.
+
 oauth2_proxy
 =================
 
