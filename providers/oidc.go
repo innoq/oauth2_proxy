@@ -84,6 +84,7 @@ func (p *OIDCProvider) redeemRefreshToken(s *SessionState) (err error) {
 	s.RefreshToken = newSession.RefreshToken
 	s.ExpiresOn = newSession.ExpiresOn
 	s.Email = newSession.Email
+	s.User = newSession.User
 	return
 }
 
